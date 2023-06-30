@@ -41,6 +41,15 @@ You can also get a list of live examples that you can immediately run on your ma
 
 ```
 
+```构建镜像
+docker build -t zimu .
+
+```启动接口
+docker run -p 80:80 -d zimu
+
+```测试接口
+curl -X POST "http://localhost:80/generate_subtitles/" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "audio=@ceshi.mp3" -F "text=@ceshi.txt"
+
 
 ## License
 [GNU AFFERO GENERAL PUBLIC LICENSE](https://github.com/oyekamal/aeneas-Docker/blob/main/LICENSE)
